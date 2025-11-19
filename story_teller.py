@@ -1,15 +1,13 @@
 import streamlit as st
 from openai import OpenAI
 import os
-from dotenv import load_dotenv
 import base64
 from io import BytesIO
 
 # Load environment variables
-load_dotenv()
 
 # Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Streamlit setup
 st.set_page_config(
@@ -195,3 +193,4 @@ if st.session_state.edit_index is None:
 # Footer
 st.markdown("---")
 st.caption("Made with ❤️ using OpenAI GPT and Streamlit — A storyteller that speaks and remembers your tales 🌟")
+
